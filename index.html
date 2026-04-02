@@ -112,7 +112,9 @@
     // Listen for common end-of-funnel indicators
     const observer = new MutationObserver(() => {
       const text = document.body.innerText.toLowerCase();
-      if (text.includes('parabéns') || text.includes('ganhou') || text.includes('sucesso') || text.includes('vsl')) {
+      // Remove 'parabéns' as it appears too early in the flow.
+      // Use 'ganhou', 'pago', 'sacar' or 'sucesso' as triggers for the final reveal.
+      if (text.includes('ganhou') || text.includes('sucesso') || text.includes('sacar') || text.includes('venceste')) {
         revealVSL();
       }
     });
