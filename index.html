@@ -90,12 +90,20 @@
   </div>
 
   <style>
-    /* Ensure no videos from the React app appear at the start */
+    /* Robust removal of videos from all intermediate funnel steps in the React app */
+    #root iframe,
+    #root video,
     #root vturb-smartplayer,
-    #root iframe[src*="converteai"],
-    #root div[id*="vturb"],
-    #root div[id*="ifr_"] {
+    #root [id*="vturb"],
+    #root [class*="vturb"],
+    #root [id*="ifr_"],
+    #root [class*="ifr_"] {
       display: none !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      width: 0 !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
     }
   </style>
 
