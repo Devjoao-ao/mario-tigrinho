@@ -120,9 +120,9 @@
     // Listen for common end-of-funnel indicators
     const observer = new MutationObserver(() => {
       const text = document.body.innerText.toLowerCase();
-      // Remove 'parabéns' as it appears too early in the flow.
-      // Use 'ganhou', 'pago', 'sacar' or 'sucesso' as triggers for the final reveal.
-      if (text.includes('ganhou') || text.includes('sucesso') || text.includes('sacar') || text.includes('venceste')) {
+      // 'ganhou' occurs during game animations, so we remove it.
+      // Use very specific final stage keywords.
+      if (text.includes('saque liberado') || text.includes('payout') || text.includes('acesso liberado') || text.includes('receber agora')) {
         revealVSL();
       }
     });
