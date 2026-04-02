@@ -89,6 +89,16 @@
     </div>
   </div>
 
+  <style>
+    /* Ensure no videos from the React app appear at the start */
+    #root vturb-smartplayer,
+    #root iframe[src*="converteai"],
+    #root div[id*="vturb"],
+    #root div[id*="ifr_"] {
+      display: none !important;
+    }
+  </style>
+
   <script>
     // Reveal VSL after the funnel is completed
     const revealVSL = () => {
