@@ -68,14 +68,34 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div class="vsl-container">
+    <vturb-smartplayer id="vid-69ceaa970b8dea295b81a000"
+      style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+    <script
+      type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/86f2f4fe-a567-43c1-96ae-6054b86c4162/players/69ceaa970b8dea295b81a000/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+  </div>
 
-  <vturb-smartplayer id="vid-69ceaa970b8dea295b81a000"
-    style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
-  <script
-    type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/86f2f4fe-a567-43c1-96ae-6054b86c4162/players/69ceaa970b8dea295b81a000/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+  <div id="root" class="vsl-delay"></div>
 
+  <style>
+    .vsl-delay {
+      display: none;
+    }
+  </style>
 
+  <script>
+    // Logic to show content after the video ends
+    // Vturb usually handles elements with .vsl-delay class if configured in the dashboard.
+    // To ensure compatibility with the "only appear at the end" request, we listen for player events.
+    window.addEventListener('smartplayer-ended', function () {
+      document.querySelectorAll('.vsl-delay').forEach(el => el.style.display = 'block');
+    });
+
+    // Also listening for the Vturb-specific element revealed event
+    document.addEventListener('smartplayer-reveal-elements', function () {
+      document.querySelectorAll('.vsl-delay').forEach(el => el.style.display = 'block');
+    });
+  </script>
 </body>
 
 </html>
