@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-
-
-
   <!-- Meta Pixel Code -->
   <script>
     !function (f, b, e, v, n, t, s) {
@@ -31,7 +28,6 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- TODO: Set the document title to the name of your application -->
   <title>Lovable App</title>
   <meta name="description" content="Lovable Generated Project">
   <meta name="author" content="Lovable">
@@ -52,19 +48,10 @@
   <link rel="dns-prefetch" href="https://images.converteai.net">
   <link rel="dns-prefetch" href="https://api.vturb.com.br">
 
-
   <meta property="og:type" content="website">
   <meta property="og:image"
     content="images/id-preview-ae708740--979f8225-bcb3-43dd-9e12-1bd0b1aa5046.lovable.app-1771533208733.png">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@Lovable">
-  <meta name="twitter:image"
-    content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b25f50bc-cf1f-419e-888d-0bda3903875a/id-preview-ae708740--979f8225-bcb3-43dd-9e12-1bd0b1aa5046.lovable.app-1771533208733.png">
-  <meta property="og:title" content="Lovable App">
-  <meta name="twitter:title" content="Lovable App">
-  <meta property="og:description" content="Lovable Generated Project">
-  <meta name="twitter:description" content="Lovable Generated Project">
   <script type="module" crossorigin="" src="js/index-0RWeX7hC.js"></script>
   <link rel="stylesheet" crossorigin="" href="css/index-CWuBb4Dx.css">
   <script defer="" src="js/~flock.js" data-proxy-url="https://tiger-kwanza-thrill.lovable.app/~api/analytics"></script>
@@ -73,75 +60,33 @@
 <body>
   <div id="root"></div>
 
+  <!-- VSL SECTION -->
   <div class="vsl-container"
-    style="opacity: 0; height: 0; overflow: hidden; pointer-events: none; text-align: center; background: #000; border-top: 2px solid #ffcc00; margin-top: 20px; transition: opacity 0.5s ease;">
+    style="text-align: center; padding: 60px 20px; background: #000; border-top: 2px solid #ffcc00; margin-top: 20px;">
     <h2
-      style="color: #ffcc00; font-family: 'Russo One', sans-serif; margin-bottom: 30px; font-size: 1.8rem; line-height: 1.3; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);">
+      style="color: #ffcc00; font-family: sans-serif; margin-bottom: 30px; font-size: 1.8rem; line-height: 1.3; text-transform: uppercase;">
       ASSISTA O VÍDEO ABAIXO PARA VER COMO RECEBER O SEU DINHEIRO AGORA MESMO
     </h2>
 
     <script
       type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js", s.async = !0, document.head.appendChild(s); </script>
-    <div id="ifr_69ceaa970b8dea295b81a000_wrapper"
-      style="margin: 0 auto; width: 100%; max-width: 400px; box-shadow: 0 0 30px rgba(255, 204, 0, 0.4); border-radius: 8px; overflow: hidden;">
-      <div style="position: relative; padding: 160% 0 0 0;" id="ifr_69ceaa970b8dea295b81a000_aspect"> <iframe
-          frameborder="0" allowfullscreen
-          src="https://scripts.converteai.net/86f2f4fe-a567-43c1-96ae-6054b86c4162/players/69ceaa970b8dea295b81a000/v4/embed.html"
-          id="ifr_69ceaa970b8dea295b81a000" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          referrerpolicy="origin"></iframe>
+    <div id="ifr_69ceaa970b8dea295b81a000_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+      <div style="position: relative; padding: 160% 0 0 0;" id="ifr_69ceaa970b8dea295b81a000_aspect">
+        <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_69ceaa970b8dea295b81a000"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin"
+          onload=" this.onload=null, this.src='https://scripts.converteai.net/86f2f4fe-a567-43c1-96ae-6054b86c4162/players/69ceaa970b8dea295b81a000/v4/embed.html' +(location.search||'?') +'&vl=' +encodeURIComponent(location.href)"></iframe>
       </div>
     </div>
   </div>
 
   <style>
-    /* Robust removal of videos from all intermediate funnel steps in the React app */
+    /* Hide videos that appear inside the funnel until the end */
     #root iframe,
     #root video,
-    #root vturb-smartplayer,
-    #root [id*="vturb"],
-    #root [class*="vturb"],
-    #root [id*="ifr_"],
-    #root [class*="ifr_"] {
+    #root vturb-smartplayer {
       display: none !important;
-      visibility: hidden !important;
-      height: 0 !important;
-      width: 0 !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
     }
   </style>
-
-  <script>
-    // Reveal VSL after the funnel is completed
-    const revealVSL = () => {
-      const container = document.querySelector('.vsl-container');
-      if (container && container.style.opacity === '0') {
-        container.style.opacity = '1';
-        container.style.height = 'auto';
-        container.style.padding = '60px 20px';
-        container.style.pointerEvents = 'auto';
-        window.scrollTo({ top: container.offsetTop, behavior: 'smooth' });
-      }
-    };
-
-    // Listen for common end-of-funnel indicators
-    const observer = new MutationObserver(() => {
-      const text = document.body.innerText.toLowerCase();
-      // 'ganhou' occurs during game animations, so we remove it.
-      // Use very specific final stage keywords.
-      if (text.includes('saque liberado') || text.includes('payout') || text.includes('acesso liberado') || text.includes('receber agora')) {
-        revealVSL();
-      }
-    });
-
-    const root = document.getElementById('root');
-    if (root) {
-      observer.observe(root, { childList: true, subtree: true });
-    }
-
-    // Support URL changes or direct events
-    document.addEventListener('smartplayer-reveal-elements', revealVSL);
-  </script>
 </body>
 
 </html>
